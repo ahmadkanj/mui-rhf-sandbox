@@ -1,0 +1,8 @@
+{
+  "atMostThreeSkills": "Vous ne pouvez sélectionner que trois compétences au maximum",
+  "roleAndSkillsMismatchError": "Ces compétences sont invalides pour le rôle choisi",
+  "firstNameRequired": "Un prénom est requis",
+  "lastNameRequired": "Un nom est requis",
+  "passwordRequired": "Un mot de passe est requis",
+  "roleRequired": "Vous devez sélectionner un rôle"
+}
