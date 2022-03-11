@@ -34,7 +34,7 @@ describe('Input component', () => {
 
     userEvent.click(screen.getByRole('button'));
 
-    await screen.findByText(/oh no! an error occurred/i);
+    await screen.findByText(/forms:genericError/i);
   });
 
   it('should allow default values', async () => {

@@ -1664,7 +1664,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-53:focus::-ms-input-
                       for="mui-5"
                       id="mui-5-label"
                     >
-                      Username
+                      signupPage:form.userName
                     </label>
                     <div
                       class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall emotion-19"
@@ -1685,12 +1685,11 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-53:focus::-ms-input-
                           class="emotion-22"
                         >
                           <span>
-                            Username
+                            signupPage:form.userName
                           </span>
                         </legend>
                       </fieldset>
                     </div>
-                    
                   </div>
                 </div>
                 <div
@@ -1705,7 +1704,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-53:focus::-ms-input-
                       for="mui-6"
                       id="mui-6-label"
                     >
-                      Firstname
+                      signupPage:form.firstName
                     </label>
                     <div
                       class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall emotion-19"
@@ -1726,12 +1725,11 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-53:focus::-ms-input-
                           class="emotion-22"
                         >
                           <span>
-                            Firstname
+                            signupPage:form.firstName
                           </span>
                         </legend>
                       </fieldset>
                     </div>
-                    
                   </div>
                 </div>
                 <div
@@ -1746,7 +1744,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-53:focus::-ms-input-
                       for="mui-7"
                       id="mui-7-label"
                     >
-                      Lastname
+                      signupPage:form.lastName
                     </label>
                     <div
                       class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall emotion-19"
@@ -1767,12 +1765,11 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-53:focus::-ms-input-
                           class="emotion-22"
                         >
                           <span>
-                            Lastname
+                            signupPage:form.lastName
                           </span>
                         </legend>
                       </fieldset>
                     </div>
-                    
                   </div>
                 </div>
                 <div
@@ -1786,7 +1783,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-53:focus::-ms-input-
                       data-shrink="false"
                       for="outlined-adornment-password"
                     >
-                      Password
+                      signupPage:form.password
                     </label>
                     <div
                       class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-adornedEnd emotion-40"
@@ -1853,7 +1850,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-53:focus::-ms-input-
                       data-shrink="false"
                       id="idRole-select"
                     >
-                      Role
+                      signupPage:role
                     </label>
                     <div
                       class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall  emotion-52"
@@ -1899,7 +1896,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-53:focus::-ms-input-
                           class="emotion-22"
                         >
                           <span>
-                            Role
+                            signupPage:role
                           </span>
                         </legend>
                       </fieldset>
@@ -1919,14 +1916,14 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-53:focus::-ms-input-
                       class="MuiFormGroup-root emotion-61"
                     >
                       <nav
-                        aria-labelledby="Skills-list"
+                        aria-labelledby="signupPage:skills-list"
                         class="MuiList-root MuiList-padding MuiList-subheader emotion-62"
                       >
                         <div
                           class="MuiListSubheader-root MuiListSubheader-gutters MuiListSubheader-sticky emotion-63"
-                          id="Skills-list"
+                          id="signupPage:skills-list"
                         >
-                          Skills
+                          signupPage:skills
                         </div>
                         <div
                           class="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root emotion-64"
@@ -2172,7 +2169,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-53:focus::-ms-input-
                     tabindex="0"
                     type="submit"
                   >
-                    Signup
+                    signupPage:form.submit
                     <span
                       class="MuiTouchRipple-root emotion-45"
                     />
@@ -3375,7 +3372,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-41:focus::-ms-input-
                       for="mui-1"
                       id="mui-1-label"
                     >
-                      Username
+                      signupPage:form.userName
                     </label>
                     <div
                       class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall emotion-19"
@@ -3396,12 +3393,11 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-41:focus::-ms-input-
                           class="emotion-22"
                         >
                           <span>
-                            Username
+                            signupPage:form.userName
                           </span>
                         </legend>
                       </fieldset>
                     </div>
-                    
                   </div>
                 </div>
                 <div
@@ -3416,7 +3412,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-41:focus::-ms-input-
                       for="mui-2"
                       id="mui-2-label"
                     >
-                      Firstname
+                      signupPage:form.firstName
                     </label>
                     <div
                       class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall emotion-19"
@@ -3437,12 +3433,11 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-41:focus::-ms-input-
                           class="emotion-22"
                         >
                           <span>
-                            Firstname
+                            signupPage:form.firstName
                           </span>
                         </legend>
                       </fieldset>
                     </div>
-                    
                   </div>
                 </div>
                 <div
@@ -3457,7 +3452,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-41:focus::-ms-input-
                       for="mui-3"
                       id="mui-3-label"
                     >
-                      Lastname
+                      signupPage:form.lastName
                     </label>
                     <div
                       class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall emotion-19"
@@ -3478,12 +3473,11 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-41:focus::-ms-input-
                           class="emotion-22"
                         >
                           <span>
-                            Lastname
+                            signupPage:form.lastName
                           </span>
                         </legend>
                       </fieldset>
                     </div>
-                    
                   </div>
                 </div>
                 <div
@@ -3497,7 +3491,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-41:focus::-ms-input-
                       data-shrink="false"
                       for="outlined-adornment-password"
                     >
-                      Password
+                      signupPage:form.password
                     </label>
                     <div
                       class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-adornedEnd emotion-40"
@@ -3578,7 +3572,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-41:focus::-ms-input-
                     <div
                       class="MuiGrid-root MuiGrid-item emotion-55"
                     >
-                      Loading available roles for you ...
+                      signupPage:loadingAvailableItems
                     </div>
                   </div>
                 </div>
@@ -3607,7 +3601,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-41:focus::-ms-input-
                     <div
                       class="MuiGrid-root MuiGrid-item emotion-55"
                     >
-                      Loading available skills for you ...
+                      signupPage:loadingAvailableItems
                     </div>
                   </div>
                 </div>
@@ -3620,7 +3614,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-41:focus::-ms-input-
                     tabindex="0"
                     type="submit"
                   >
-                    Signup
+                    signupPage:form.submit
                     <span
                       class="MuiTouchRipple-root emotion-45"
                     />

@@ -510,8 +510,7 @@ exports[`Signup component snapshots should match snapshot when displaying user d
               <p
                 class="MuiTypography-root MuiTypography-body1 emotion-19"
               >
-                You are a 
-                Skwat owner
+                userInfosPage:youAreARole
               </p>
             </div>
             <hr
@@ -523,7 +522,7 @@ exports[`Signup component snapshots should match snapshot when displaying user d
               <p
                 class="MuiTypography-root MuiTypography-body1 emotion-19"
               >
-                Your skills are
+                userInfosPage:yourSkillsAre
               </p>
               <ul
                 class="MuiList-root MuiList-padding MuiList-dense emotion-25"
