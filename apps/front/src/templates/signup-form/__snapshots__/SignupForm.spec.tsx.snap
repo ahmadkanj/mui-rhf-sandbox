@@ -1829,7 +1829,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-53:focus::-ms-input-
                           class="emotion-22"
                         >
                           <span>
-                            Password
+                            signupPage:form.password
                           </span>
                         </legend>
                       </fieldset>
@@ -3537,7 +3537,7 @@ label[data-shrink=false]+.MuiInputBase-formControl .emotion-41:focus::-ms-input-
                           class="emotion-22"
                         >
                           <span>
-                            Password
+                            signupPage:form.password
                           </span>
                         </legend>
                       </fieldset>
