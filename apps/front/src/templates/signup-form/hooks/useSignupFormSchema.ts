@@ -1,6 +1,6 @@
 import * as zod from 'zod';
 
-import { TranslationsKey } from '@translations';
+import { NamespaceKey } from '@translations';
 
 import { useSignupFormRefinements } from './useSignupFormRefinements';
 
@@ -14,13 +14,12 @@ export type FormModel = {
 };
 
 export const useSignupFormSchema = () => {
-  // Translations keys
-  const firstNameRequired: TranslationsKey = 'firstNameRequired';
-  const lastNameRequired: TranslationsKey = 'lastNameRequired';
-  const passwordRequired: TranslationsKey = 'passwordRequired';
-  const roleRequired: TranslationsKey = 'roleRequired';
-
   const { skillsAvailabilityForRole, skillsCount } = useSignupFormRefinements();
+
+  const roleRequired: NamespaceKey<'forms'> = 'roleRequired';
+  const firstNameRequired: NamespaceKey<'forms'> = 'firstNameRequired';
+  const lastNameRequired: NamespaceKey<'forms'> = 'lastNameRequired';
+  const passwordRequired: NamespaceKey<'forms'> = 'passwordRequired';
 
   const schema: zod.ZodSchema<FormModel> = zod
     .object({

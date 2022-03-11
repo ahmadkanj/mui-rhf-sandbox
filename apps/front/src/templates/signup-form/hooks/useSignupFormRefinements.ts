@@ -2,7 +2,7 @@ import { useQueryClient } from 'react-query';
 import * as zod from 'zod';
 
 import { useAreSkillsAvailableForRoleMutation } from '@api';
-import { TranslationsKey } from '@translations';
+import { NamespaceKey } from '@translations';
 
 import { FormModel } from './useSignupFormSchema';
 
@@ -18,7 +18,7 @@ export const useSignupFormRefinements = () => {
   });
   const queryClient = useQueryClient();
 
-  const atMostThreeSkills: TranslationsKey = 'atMostThreeSkills';
+  const atMostThreeSkills: NamespaceKey<'forms'> = 'atMostThreeSkills';
 
   const skillsAvailabilityForRole = async (
     { idRole, idSkills }: SkillsAvailabilityForRoleRefinementPredicate,

@@ -11,7 +11,7 @@ import {
 import { useState } from 'react';
 import { useController, UseControllerProps } from 'react-hook-form';
 
-import { t } from '@translations';
+import { useTranslatedInputError } from '../logic/useTranslatedInputError';
 
 export interface PasswordInputProps<T> extends UseControllerProps<T> {
   label: string;
@@ -23,6 +23,7 @@ export function PasswordInput<T>(props: PasswordInputProps<T>): JSX.Element {
     fieldState,
   } = useController(props);
 
+  const errorMessage = useTranslatedInputError(fieldState);
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   return (
@@ -54,7 +55,7 @@ export function PasswordInput<T>(props: PasswordInputProps<T>): JSX.Element {
             </IconButton>
           </InputAdornment>
         }
-        label="Password"
+        label={props.label}
         onChange={(e) => {
           onChange(e.target.value === '' ? undefined : e.target.value);
         }}
@@ -62,7 +63,7 @@ export function PasswordInput<T>(props: PasswordInputProps<T>): JSX.Element {
         {...otherFieldProps}
         inputRef={ref}
       />
-      <FormHelperText>{t(fieldState.error?.message)}</FormHelperText>
+      <FormHelperText>{errorMessage}</FormHelperText>
     </FormControl>
   );
 }

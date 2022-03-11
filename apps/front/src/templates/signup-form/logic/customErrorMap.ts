@@ -1,6 +1,6 @@
 import { ZodIssueOptionalMessage } from 'zod';
 
-import { translationsKeys } from '@translations';
+import { formsKeys } from '@translations';
 
 type ErrorMapCtx = {
   defaultError: string;
@@ -15,17 +15,23 @@ export const customErrorMap = (
   issue: ZodIssueOptionalMessage,
   ctx: ErrorMapCtx
 ): ErrorMapResult => {
-  if (issue.message && translationsKeys.includes(issue.message)) {
+  if (issue.message && formsKeys.includes(issue.message)) {
     return {
       message: issue.message,
     };
   }
 
-  if (translationsKeys.includes(ctx.defaultError)) {
+  if (ctx.defaultError && formsKeys.includes(ctx.defaultError)) {
     return {
       message: ctx.defaultError,
     };
   }
 
-  return { message: issue.code || 'genericError' };
+  if (issue.code && formsKeys.includes(issue.code)) {
+    return {
+      message: issue.code,
+    };
+  }
+
+  return { message: 'genericFormError' };
 };

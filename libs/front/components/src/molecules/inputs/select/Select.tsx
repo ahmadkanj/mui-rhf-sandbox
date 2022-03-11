@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import { useController, UseControllerProps } from 'react-hook-form';
 
-import { t } from '@translations';
+import { useTranslatedInputError } from '../logic/useTranslatedInputError';
 
 export type SelectItem = {
   key?: number;
@@ -28,6 +28,8 @@ export function Select<T>({
     field: { value, onChange, ...othersProps },
     fieldState,
   } = useController(controllerProps);
+  const errorMessage = useTranslatedInputError(fieldState);
+
   const { name } = controllerProps;
 
   if (!data) {
@@ -54,7 +56,7 @@ export function Select<T>({
           </MenuItem>
         ))}
       </MuiSelect>
-      <FormHelperText>{t(fieldState.error?.message)}</FormHelperText>
+      <FormHelperText>{errorMessage}</FormHelperText>
     </FormControl>
   );
 }
