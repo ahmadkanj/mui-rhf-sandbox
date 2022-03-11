@@ -87,6 +87,7 @@ specifiers:
   express: 4.0.0
   fs-extra: ^10.0.1
   i18next: ^21.6.14
+  i18next-browser-languagedetector: ^6.1.3
   jest: 27.5.1
   jest-mock: ^27.5.1
   jest-mock-extended: ^2.0.4
@@ -111,6 +112,7 @@ specifiers:
   sonarqube-scanner: ^2.8.1
   storybook-addon-next-router: ^3.1.1
   storybook-dark-mode: ^1.0.9
+  storybook-react-i18next: ^1.0.17
   styled-components: 5.3.3
   swagger-typescript-types: ^2.1.6
   swagger-ui-express: ^4.3.0
@@ -230,6 +232,7 @@ devDependencies:
   eslint-plugin-react-hooks: 4.3.0_eslint@8.10.0
   express: 4.0.0
   i18next: 21.6.14
+  i18next-browser-languagedetector: 6.1.3
   jest: 27.5.1
   jest-mock: 27.5.1
   jest-mock-extended: 2.0.4_jest@27.5.1+typescript@4.6.2
@@ -242,6 +245,7 @@ devDependencies:
   sonarqube-scanner: 2.8.1
   storybook-addon-next-router: 3.1.1_9a8016499d762bf5b0c840f3045e2d78
   storybook-dark-mode: 1.0.9_bdb88cf577f190583d60d23c102288af
+  storybook-react-i18next: 1.0.17_417e4d81fe4da5ca28837432640827da
   swagger-typescript-types: 2.1.6
   ts-jest: 27.1.3_e0fe88243f0076a0bcfcaf16c62c6e3c
   typescript: 4.6.2
@@ -747,7 +751,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.16.7
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.12.9
       '@babel/plugin-transform-parameters': 7.16.7_@babel+core@7.12.9
     dev: true
@@ -11550,6 +11554,12 @@ packages:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
 
+  /i18next-browser-languagedetector/6.1.3:
+    resolution: {integrity: sha512-T+oGXHXtrur14CGnZZ7qQ07X38XJQEI00b/4ILrtO6xPbwTlQ1wtMZC2H+tBULixHuVUXv8LKbxfjyITJkezUg==}
+    dependencies:
+      '@babel/runtime': 7.17.2
+    dev: true
+
   /i18next-fs-backend/1.1.4:
     resolution: {integrity: sha512-/MfAGMP0jHonV966uFf9PkWWuDjPYLIcsipnSO3NxpNtAgRUKLTwvm85fEmsF6hGeu0zbZiCQ3W74jwO6K9uXA==}
     dev: false
@@ -17119,6 +17129,64 @@ packages:
       '@storybook/theming': 6.4.19_react-dom@17.0.2+react@17.0.2
       fast-deep-equal: 3.1.3
       memoizerific: 1.11.3
+    dev: true
+
+  /storybook-i18n/1.0.11_6d3fd42cc2dc28673127a5aba3ab9a43:
+    resolution: {integrity: sha512-wHN/93ylrfdxot0MV8sMKWJF4TkJT/XOtuHnUA4CIWrenymC4o33uNcB1sOWa2UiiEqhOK3wJ5gOPOyhgjPjwA==}
+    peerDependencies:
+      '@storybook/addons': ^6.4.17
+      '@storybook/api': ^6.4.17
+      '@storybook/components': ^6.4.17
+      '@storybook/core-events': ^6.4.17
+      '@storybook/theming': ^6.4.17
+      react: ^16.8.0 || ^17.0.0
+      react-dom: ^16.8.0 || ^17.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@storybook/addons': 6.4.19_react-dom@17.0.2+react@17.0.2
+      '@storybook/api': 6.4.19_react-dom@17.0.2+react@17.0.2
+      '@storybook/components': 6.4.19_b8fdba992ce7d797017dc07106486496
+      '@storybook/core-events': 6.4.19
+      '@storybook/theming': 6.4.19_react-dom@17.0.2+react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: true
+
+  /storybook-react-i18next/1.0.17_417e4d81fe4da5ca28837432640827da:
+    resolution: {integrity: sha512-xuaaPgQTqF21S0OSmkG6pmExLzYHmflM2MqyX0oy5uUzzzJzODJMFoapEuW4Ec0yxIY7hVO/PIuA+R+/lYj7fg==}
+    peerDependencies:
+      '@storybook/addons': ^6.4.17
+      '@storybook/api': ^6.4.17
+      '@storybook/components': ^6.4.17
+      '@storybook/core-events': ^6.4.17
+      '@storybook/theming': ^6.4.17
+      i18next: ^20.0.0 || ^21.0.0
+      i18next-browser-languagedetector: ^6.1.2
+      i18next-http-backend: ^1.3.1
+      react: ^16.8.0 || ^17.0.0
+      react-dom: ^16.8.0 || ^17.0.0
+      react-i18next: ^11.15.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@storybook/addons': 6.4.19_react-dom@17.0.2+react@17.0.2
+      '@storybook/api': 6.4.19_react-dom@17.0.2+react@17.0.2
+      '@storybook/components': 6.4.19_b8fdba992ce7d797017dc07106486496
+      '@storybook/core-events': 6.4.19
+      '@storybook/theming': 6.4.19_react-dom@17.0.2+react@17.0.2
+      i18next: 21.6.14
+      i18next-browser-languagedetector: 6.1.3
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-i18next: 11.15.6_f94be6b4dd1edc1d8608af374b838bd6
+      storybook-i18n: 1.0.11_6d3fd42cc2dc28673127a5aba3ab9a43
     dev: true
 
   /stream-browserify/2.0.2:
