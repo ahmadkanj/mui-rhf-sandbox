@@ -1,8 +1,10 @@
 {
+  "atLeastOneSkill": "You need to select at least one skill",
   "atMostThreeSkills": "You need to select at most three skills",
   "roleAndSkillsMismatchError": "Invalid skills for this role!",
   "firstNameRequired": "A firstname is required",
   "lastNameRequired": "A lastname is required",
   "passwordRequired": "A password is required",
-  "roleRequired": "You need to select a role"
+  "roleRequired": "You need to select a role",
+  "genericFormError": "This field is required"
 }
