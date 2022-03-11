@@ -20,6 +20,7 @@ const Home: NextPage = () => {
 
 export const getStaticProps: GetStaticProps = async ({
   locale,
-}: GetStaticPropsContext) => getLocalizedStaticProps(locale, ['forms']);
+}: GetStaticPropsContext) =>
+  getLocalizedStaticProps(locale, ['forms', 'signupPage']);
 
 export default Home;

@@ -21,6 +21,6 @@ const HomePage: NextPage = () => {
 
 export const getStaticProps: GetStaticProps = async ({
   locale,
-}: GetStaticPropsContext) => getLocalizedStaticProps(locale);
+}: GetStaticPropsContext) => getLocalizedStaticProps(locale, ['userInfosPage']);
 
 export default HomePage;
