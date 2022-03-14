@@ -71,6 +71,19 @@ describe('Signup component', () => {
         expect(pushMock).toHaveBeenCalledTimes(1);
       });
     });
+
+    it('should display an error page when user profile fetching', async () => {
+      msw.userDataQuery(500, undefined);
+      localStorage.setItem('token', '"cool"');
+
+      render(<LoggedUserHome />);
+
+      await screen.findByTestId(/ErrorOutlineIcon/i);
+      expect(screen.getByText(/userInfosPage:ohNo/i)).toBeInTheDocument();
+      expect(
+        screen.getByText(/userInfosPage:profileLoadingError/i)
+      ).toBeInTheDocument();
+    });
   });
 
   describe('data display', () => {
