@@ -161,47 +161,44 @@ const MyComponent = () => {
 }
 ```
 
-## 🔶 Using custom error messages
+## 🔶 Custom error messages and localization
 
-Since our app is localized, we will have to override the default error messages provided by zod. We can do this easily by providing parameters to zod functions in our schema.
+Since our app is avaialable in several languages, we will have to override the default error messages provided by zod. We can do this easily by providing parameters to zod functions in our schema.
 
-```typescript
-// Our translations, defined as a nested object
-const langEn = {
-  required: "This field is required..."
-};
-
-// Let's infer its keys
-export const translationsKeys = Object.keys(langEn);
-export type TranslationsKey = keyof typeof langEn;
-```
-
-We can then pass translations keys to the zod validation chain functions:
+We will use the `NamespaceKey` type to make sure we pass an existing key. `NamespaceKey` takes a namespace as generic parameter:
 
 ```typescript
 type FormModel = {
   name: string;
 };
 
-const requiredKey: TranslationsKey = "required";
+const nameRequired: NamespaceKey<'forms'> = 'nameRequired';
 
 const schema: zod.ZodSchema<FormModel> = zod.object({
-  name: zod.string().min(1, requiredKey), 
+  name: zod.string().min(1, nameRequired), 
 });
 ```
 
-Then, all we have to do is to call the `translate` function of our translations lib in our generic components:
+Then, all we have to do is to call the `useTranslation` function of next-i18next:
 
 ```typescript
+const useTranslatedInputError = (fieldState: ControllerFieldState) => {
+  const { t } = useTranslation('forms');
+
+  return fieldState.error?.message
+    ? t(fieldState.error?.message as NamespaceKey<'forms'>)
+    : undefined;
+};
+
 export function Input<T>(props: InputProps<T>): JSX.Element {
   // ...
 
-  const t = useTranslations();
+  const errorMessage = useTranslatedInputError(fieldState);
 
   return (
     <TextField
       // ...
-      helperText={t(fieldState.error?.message)}
+      helperText={errorMessage}
     />
   );
 }
@@ -209,7 +206,7 @@ export function Input<T>(props: InputProps<T>): JSX.Element {
 
 ## 🔶 Overriding zod default error messages
 
-While defining messages in the schema gives us fine grained control over the messages we want to display, it may be useful to make sure we always send translated default messages. We can do by passing a function to the errorMap option in `zodResolver` function:
+While defining messages in the schema gives us fine grained control over the messages we want to display, it may be useful to make sure we always send translated default messages. We can do so by passing a function to the errorMap option in `zodResolver` function:
 
 ```typescript
 const { control, handleSubmit } = useForm<FormModel>({
@@ -219,29 +216,39 @@ const { control, handleSubmit } = useForm<FormModel>({
 });
 ```
 
-`customErrorMap` could look like this:
+The `customErrorMap` function could look like this:
 
 ```typescript
+import enFormsLocale from './../../assets/locales/en/forms.json';
+export const formsKeys = Object.keys(enFormsLocale);
+
 export const customErrorMap = (
   issue: ZodIssueOptionalMessage,
   ctx: ErrorMapCtx
 ): ErrorMapResult => {
-  // if we have a custom error defined in the schema, let's use it!
-  if (issue.message && translationsKeys.includes(issue.message)) {
+  // if issue.message is a key defined in form namespace ...
+  if (issue.message && formsKeys.includes(issue.message)) {
     return {
       message: issue.message,
     };
   }
 
-  // Otherwise, let's use the default translation for this error code
-  if (translationsKeys.includes(ctx.defaultError)) {
+  // if ctx.defaultError is a key defined in form namespace ...
+  if (ctx.defaultError && formsKeys.includes(ctx.defaultError)) {
     return {
       message: ctx.defaultError,
     };
   }
 
-  // Otherwise, let's use the raw code (untranslated) or a generic translation key instead 
-  return { message: issue.code || 'genericError' };
+  // if issue.code is a key defined in form namespace ...
+  if (issue.code && formsKeys.includes(issue.code)) {
+    return {
+      message: issue.code,
+    };
+  }
+
+  // Otherwise, we default to forms:genericFormError key
+  return { message: 'genericFormError' };
 };
 ```
 
